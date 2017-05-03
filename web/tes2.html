@@ -1,0 +1,26 @@
+<body id="unload-trigger-element">
+
+UM400 connected to DVD player.<br><br>
+
+<!-- player container -->
+<object style="visibility: visible;" data="http://www.umediaserver.net/bin/FlashPlayer/player-quick.swf" name="player-container" id="player-container" type="application/x-shockwave-flash" height="480" width="704"><param value="true" name="allowFullScreen"><param value="sameDomain" name="allowScriptAccess"><param value="transparent" name="bgcolor"><param value="transparent" name="wmode"><param value="rtmp=rtmp://localhost:5119/live/SttTelkom&amp;autoplay=true&amp;bufferLength=4&amp;showMetadata=true&amp;showLiveCaption=true&amp;livelabelshowbg=false&amp;showErrorInPlayer=true&amp;playerID=player-container" name="flashvars"></object>
+ 
+<script type="text/javascript"> 
+embedPlayer('player-container', {
+    flashvars : {
+       'rtmp' : 'rtmp://localhost:5119/live/SttTelkom',         
+       'autoplay' : true,       
+       'bufferLength' : 4,                                              
+       'showMetadata': true,                                                      
+       'showLiveCaption' : true,                                                 
+       'livelabelshowbg': false,                                                
+       'showErrorInPlayer' : true                                               
+    },
+    size : { width: 704, height: 480 },
+    playerStyle : 'quick'
+});
+</script>
+ 
+
+
+</body>
