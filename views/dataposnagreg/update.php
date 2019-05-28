@@ -8,9 +8,8 @@ use yii\helpers\Html;
 $this->title = 'Update Slideshow: ' . $model->image_name;
 ?>
 <div class="slideshow-update">
-
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <h4><?= $error ?></h4>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

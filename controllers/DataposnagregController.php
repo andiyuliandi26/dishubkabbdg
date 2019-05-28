@@ -71,25 +71,31 @@ class DataposnagregController extends Controller
 				
 				Yii::$app->params['uploadPath'] = Yii::$app->basePath.'/web/images/slideshow/';
 				$path = Yii::$app->params['uploadPath']. $model->picture_web;
-				
-				$image->saveAS($path);				
+                echo $model->picture_web;
+				if($image->saveAS($path)){
+                    $model->lastmodified = date("Y-m-d H:i:s");
+			
+                    if($model->save()){
+                        return $this->redirect(['index']);
+                    }else{		
+                        return $this->render('update', [
+                            'model' => $model,
+                            'error' => ""
+                        ]);
+                    }
+                }else{
+                    return $this->render('update', [
+                        'model' => $model,
+                        'error' => print_r($image->error)
+                    ]);
+                }			
 			}else{
 				$model->filename = $model->filename;
 			}
-			
-			$model->lastmodified = date("Y-m-d H:i:s");
-			
-			if($model->save()){
-				return $this->redirect(['index']);
-			}else{		
-				return $this->render('update', [
-					'model' => $model,
-				]);
-			}
-			
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'error' => ""
             ]);
         }
     }

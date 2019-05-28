@@ -17,7 +17,7 @@ class Slideshow extends \yii\db\ActiveRecord
             [['upload_date', 'lastmodified'], 'safe'],
             [['image_name', 'status'], 'string', 'max' => 45],
             [['filename'], 'string', 'max' => 100],
-			[['filename'], 'file', 'extensions' => 'png, jpg', 'skipOnEmpty' => true],
+			[['filename'], 'file', 'extensions' => 'png, jpg, jpeg', 'skipOnEmpty' => true],
             [['picture_web'], 'string', 'max' => 150],
             [['image_seq'], 'unique'],
         ];
