@@ -61,7 +61,7 @@ use app\models\Slideshow;
 							'browseClass' => 'btn btn-primary btn-block',
 							'browseIcon' => '<i class="glyphicon glyphicon-camera"></i> ',
 							'browseLabel' =>  'Pilih Gambar',
-							'allowedFileExtensions'=>['jpg', 'gif','png'],
+							'allowedFileExtensions'=>['jpg', 'gif','png', 'jpeg'],
 						],
 						'options' => ['accept' => 'image/*'],
 					]); ?>
