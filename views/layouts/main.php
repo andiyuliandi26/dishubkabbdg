@@ -103,7 +103,7 @@ $isMobile = preg_match('/android.+mobile|avantgo|bada\/|blackberry|blazer|compal
     </div>
 </div>
 
-<footer class="footer" style="padding: 20px;">
+<footer class="footer" style="padding: 0px 20px 0px 20px;">
     <!-- Created By : Andi Yuliandi (Programmer - AMSolutionTech - 0822 1915 4532 - andiyuliandi26@gmail.com) -->
     <?php
 		if($isMobile){ 
@@ -116,13 +116,13 @@ $isMobile = preg_match('/android.+mobile|avantgo|bada\/|blackberry|blazer|compal
 		<?php
 		}else{
 			?>
-			<p class="pull-left">
+			<p class="pull-left"style="height:45px; vertical-align:bottom; padding-top:5px;">
             	<img src="/images/logo_dishub.png" height="50px" width="40px" style="margin-right:20px;"/>
             	<img src="/images/logo_kab_bandung.png" height="50px" width="50px" style="margin-right:20px;"/>
             	<img src="/images/logo_sabilulungan.png" height="50px" width="50px"/>
             </p>
 		
-        	<div class="pull-right" style="height:50px; vertical-align:bottom; padding-top:0px;">&copy; Dinas Pehubungan Kabupaten Bandung <?= date('Y'); ?> </br> &copy; AYS-AMSolutionTech</div>
+        	<div class="pull-right" style="height:50px; vertical-align:bottom; padding-top:15px;">&copy; Dinas Pehubungan Kabupaten Bandung <?= date('Y'); ?> </br> &copy; AYS-AMSolutionTech</div>
 	<?php
         }
 	?>
