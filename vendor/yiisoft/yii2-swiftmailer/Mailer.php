@@ -80,7 +80,7 @@ class Mailer extends BaseMailer
      */
     public $messageClass = 'yii\swiftmailer\Message';
     /**
-     * @var boolean whether to enable writing of the SwiftMailer internal logs using Yii log mechanism.
+     * @var bool whether to enable writing of the SwiftMailer internal logs using Yii log mechanism.
      * If enabled [[Logger]] plugin will be attached to the [[transport]] for this purpose.
      * @see Logger
      */
@@ -212,6 +212,7 @@ class Mailer extends BaseMailer
         } else {
             throw new InvalidConfigException('Object configuration must be an array containing a "class" element.');
         }
+
         if (isset($config['constructArgs'])) {
             $args = [];
             foreach ($config['constructArgs'] as $arg) {
@@ -226,13 +227,15 @@ class Mailer extends BaseMailer
         } else {
             $object = Yii::createObject($className);
         }
+
         if (!empty($config)) {
+            $reflection = new \ReflectionObject($object);
             foreach ($config as $name => $value) {
-                if (property_exists($object, $name)) {
+                if ($reflection->hasProperty($name) && $reflection->getProperty($name)->isPublic()) {
                     $object->$name = $value;
                 } else {
                     $setter = 'set' . $name;
-                    if (method_exists($object, $setter) || method_exists($object, '__call')) {
+                    if ($reflection->hasMethod($setter) || $reflection->hasMethod('__call')) {
                         $object->$setter($value);
                     } else {
                         throw new InvalidConfigException('Setting unknown property: ' . $className . '::' . $name);

@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-	'dsn' => 'mysql:host=localhost;dbname=dishubka_cctv',
-	'username' => 'dishubka_cctv',
-	'password' => 'dishubkabbdg2017',
+	'dsn' => 'mysql:host=localhost;dbname=andiyuliandi26_cctv',
+	'username' => 'andiyuliandi26_cctv',
+	'password' => 'Dishub2018',
 	'charset' => 'utf8',
 ];

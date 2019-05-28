@@ -7,6 +7,16 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+       'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+            // enter optional module parameters below - only if you need to  
+            // use your own export download action or custom translation 
+            // message source
+            // 'downloadAction' => 'gridview/export/download',
+            // 'i18n' => []
+        ]
+    ],
     'components' => [
 		'assetManager' => [
 			'bundles' => [
@@ -38,7 +48,16 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'dishubkabbdg.web.id',
+                'username' => 'admin@dishubkabbdg.web.id',
+                'password' => 'Ilovenay14',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+            'viewPath' => '@app/mail',
+            'useFileTransport' => false,
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -54,12 +73,14 @@ $config = [
 		'urlManager' => [
 			'enablePrettyUrl' => true,
 			'showScriptName'=> false,
-			'enableStrictParsing' => false,
+			//'enableStrictParsing' => false,
 			'rules' => [
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 				[
 					'pattern' => '<page:\d+>',
 					'route' => 'site/index',
-				]
+				],
+				
 			],
 		],
     ],
@@ -69,9 +90,9 @@ $config = [
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     //$config['bootstrap'][] = 'debug';
-    //$config['modules']['debug'] = [
-    //    'class' => 'yii\debug\Module',
-    //];
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+    ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [

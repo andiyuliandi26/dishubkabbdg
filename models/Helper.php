@@ -1,5 +1,5 @@
 <?php
-namespace frontend\models;
+namespace app\models;
 
 class Helper{
 	public static function application($type){
@@ -97,8 +97,20 @@ class Helper{
 	}
 	
 	public function encodeLink($link){
-		return base64_encode($link);
-		
+		return base64_encode($link);	
+	}
+	
+	public function displayDataFromArray($data, $index, $defaultValue){
+		switch(count($index)){
+			case 1 : return count($data) > 0 ? (float) $data[$index[0]] : (float)$defaultValue; break;
+			case 2 : return count($data) > 0 ? (float)$data[$index[0]][$index[1]] : (float)$defaultValue; break;
+			case 3 : return count($data) > 0 ? (float)$data[$index[0]][$index[1]][$index[2]] : (float)$defaultValue; break;
+			case 4 : return count($data) > 0 ? (float)$data[$index[0]][$index[1]][$index[3]][$index[4]] : (float)$defaultValue; break;
+		}
+	}
+	
+	public function displayPersen($pembilang, $penyebut){
+		return $penyebut != 0 ? (($pembilang - $penyebut ) / $penyebut) * 100 .'%' : '-100%';
 	}
 }
 	

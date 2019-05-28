@@ -1,0 +1,40 @@
+{
+  "name": "edofre/yii2-slider-pro",
+  "description": "Yii2 widget for slider-pro",
+  "require": {
+    "php": ">=5.5.0",
+    "yiisoft/yii2": ">=2.0.9",
+    "yiisoft/yii2-jui": ">=2.0.6",
+    "yiisoft/yii2-bootstrap": "~2.0.0",
+    "bower-asset/slider-pro": "1.2.2"
+  },
+  "keywords": [
+    "slider-pro",
+    "jquery",
+    "images",
+    "slider"
+  ],
+  "homepage": "https://github.com/edofre/yii2-slider-pro",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "support": {
+    "source": "https://github.com/edofre/yii2-slider-pro",
+    "issues": "https://github.com/edofre/yii2-slider-pro/issues"
+  },
+  "authors": [
+    {
+      "name": "Edo Freriks",
+      "email": "edofre@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "edofre\\sliderpro\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}

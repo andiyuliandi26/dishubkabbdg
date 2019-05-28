@@ -7,6 +7,8 @@ a set of standalone pages to display more detailed debug information.
 
 For license information check the [LICENSE](LICENSE.md)-file.
 
+Documentation is at [docs/guide/README.md](docs/guide/README.md).
+
 [![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-debug/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-debug)
 [![Total Downloads](https://poser.pugx.org/yiisoft/yii2-debug/downloads.png)](https://packagist.org/packages/yiisoft/yii2-debug)
 
@@ -40,7 +42,9 @@ Once the extension is installed, simply modify your application configuration as
 return [
     'bootstrap' => ['debug'],
     'modules' => [
-        'debug' => 'yii\debug\Module',
+        'debug' => [
+            'class' => 'yii\debug\Module',
+        ],
         // ...
     ],
     ...
@@ -49,3 +53,25 @@ return [
 
 You will see a debugger toolbar showing at the bottom of every page of your application.
 You can click on the toolbar to see more detailed debug information.
+
+
+Open Files in IDE
+-----
+
+You can create a link to open files in your favorite IDE with this configuration:
+
+```php
+return [
+    'bootstrap' => ['debug'],
+    'modules' => [
+        'debug' => [
+            'class' => 'yii\debug\Module',
+            'traceLine' => '<a href="phpstorm://open?url={file}&line={line}">{file}:{line}</a>',
+        ],
+        // ...
+    ],
+    ...
+];
+```
+
+You must make some changes to your OS, see this example: https://github.com/aik099/PhpStormProtocol

@@ -43,7 +43,7 @@ class CCTV extends \yii\db\ActiveRecord
             [['created', 'modified'], 'safe'],
             [['nama',], 'string', 'max' => 30],
             [['lokasi'], 'string', 'max' => 50],
-            [['ip_address', 'username', 'password'], 'string', 'max' => 15],
+            [['ip_address', 'username', 'password'], 'string', 'max' => 50],
             [['stream_type'], 'string', 'max' => 10],
 			[['latitude', 'longitude'], 'string', 'max' => 20]
         ];
@@ -72,5 +72,10 @@ class CCTV extends \yii\db\ActiveRecord
 			'longitude'=>'Longitude',
 			'cam_alias' => 'Alias',
         ];
+    }
+    
+    public function getLogs()
+    {
+        return $this->hasMany(Accesslogs::className(), ['id_cctv' => 'cctv_akses_id']);
     }
 }
