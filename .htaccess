@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST} 
+
+RewriteRule . index.php
+
+SetEnv TZ Asia/Jakarta
