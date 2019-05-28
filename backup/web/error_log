@@ -1,5 +1,0 @@
-[02-May-2017 04:38:44 UTC] PHP Fatal error:  Class 'app\models\AccessLogs' not found in /home/dishubkabbdg/public_html/testing/controllers/SiteController.php on line 60
-[02-May-2017 04:45:29 UTC] PHP Fatal error:  Class 'app\controllers\DateTimeZone' not found in /home/dishubkabbdg/public_html/testing/controllers/SiteController.php on line 80
-[04-May-2017 16:33:16 Asia/Jakarta] PHP Fatal error:  Class 'app\controllers\ActiveDataProvider' not found in /home/dishubkabbdg/public_html/testing/controllers/LogsController.php on line 53
-[04-May-2017 16:40:47 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/dishubkabbdg/public_html/testing/config/web.php on line 65
-[04-May-2017 16:40:54 Asia/Jakarta] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']' in /home/dishubkabbdg/public_html/testing/config/web.php on line 65
